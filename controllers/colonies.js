@@ -5,16 +5,15 @@ const router = express.Router();
 const User = require('../models/user');
 
 // Get ALL from the current user
-router.get('', (req, res, next) => {
+router.get ('', async (req, res, next) => {
     if(req.user !== undefined || req.user._id !== undefined) {
-      Colony.find({creator: req.user._id}).then(documents => {
+     await Colony.find({creator: req.user._id}).then(documents => {
         res.status(200).json({
           message: 'colonies succesfully loaded',
           colonies: documents
         });
       });
     }
-    
     else {
       res.status(401).json({
         message: 'bad request !!'

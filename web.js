@@ -17,17 +17,17 @@ const path = require('path');
 const agenda = require('./jobs/agenda');
 const unless = require('unless')
 
-// Import routes files
-const userRoutes = require("./routes/user");
-const concoursRoutes = require("./routes/concours");
-const authRoutes = require("./routes/auth");
-const tasksRoutes = require("./routes/tasks");
-const counterRoutes = require("./routes/counter");
-const coloniesRoutes = require("./routes/colonies");
-const mailRoutes = require("./routes/mail");
-const breedingSheetRoutes = require("./routes/breedingSheets");
-const notificationsRoutes = require("./routes/notifications");
-const diapausesRoutes = require("./routes/diapauses");
+// Import controllers files
+const userControllers = require("./controllers/user");
+const concoursControllers = require("./controllers/concours");
+const authControllers = require("./controllers/auth");
+const tasksControllers = require("./controllers/tasks");
+const counterControllers = require("./controllers/counter");
+const coloniesControllers = require("./controllers/colonies");
+const mailControllers = require("./controllers/mail");
+const breedingSheetControllers = require("./controllers/breedingSheets");
+const notificationsControllers = require("./controllers/notifications");
+const diapausesControllers = require("./controllers/diapauses");
 
 const { PORT = 8081 } = process.env
 const app = express();
@@ -79,17 +79,17 @@ app.use(jwt({ secret: process.env.JWT_KEY, algorithms: ['HS256']})
   next()
 })
 
-// Use routes
-app.use("/api/mail", mailRoutes);
-app.use("/api/auth", authRoutes);
-app.use("/api/users", userRoutes);
-app.use("/api/colonies", coloniesRoutes);
-app.use("/api/colonies/counter", counterRoutes);
-app.use("/api/colonies/tasks", tasksRoutes);
-app.use("/api/breedingsheets", breedingSheetRoutes);
-app.use("/api/concours", concoursRoutes);
-app.use("/api/notifications", notificationsRoutes);
-app.use("/api/diapause", diapausesRoutes);
+// Use controllers
+app.use("/api/mail", mailControllers);
+app.use("/api/auth", authControllers);
+app.use("/api/users", userControllers);
+app.use("/api/colonies", coloniesControllers);
+app.use("/api/colonies/counter", counterControllers);
+app.use("/api/colonies/tasks", tasksControllers);
+app.use("/api/breedingsheets", breedingSheetControllers);
+app.use("/api/concours", concoursControllers);
+app.use("/api/notifications", notificationsControllers);
+app.use("/api/diapause", diapausesControllers);
 
 
 const server = app.listen(PORT, () => {

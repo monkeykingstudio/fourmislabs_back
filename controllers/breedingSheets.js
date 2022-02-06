@@ -6,7 +6,7 @@ const {
   breedingSheetUpdate,
   breedingSheetDelete,
   breedingSheetApproved
-} = require("../controllers/notification");
+} = require("./notification");
 
 // Create new one
 router.post('/', (req, res, next) => {
