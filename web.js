@@ -58,7 +58,7 @@ mongoose
     mongoUri, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }
   )
   .then(() => {
-    console.log("Succesfully Connected to database!");
+    console.log("Succesfully Connected to database!!");
   })
   .catch(() => {
     console.log('Please check if there is nothing wrong with your MONGO URI', mongoUri)
