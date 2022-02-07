@@ -1,4 +1,4 @@
-class messor {
+class Messor {
     constructor(parameters)
     {
         this.trophalaxy = parameters.trophalaxy;
@@ -13,4 +13,4 @@ class messor {
     }
 }
 
-module.exports = messor;
+module.exports = Messor;
