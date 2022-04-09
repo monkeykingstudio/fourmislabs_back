@@ -29,6 +29,7 @@ console.log('received new email')
 })
 
 router.post("/sendmail", (req, res, next) => {
+  console.log('sending mail...');
     let user = req.body;
     sendMail(user, (err, info) => {
       console.log('Registration email has been sent');

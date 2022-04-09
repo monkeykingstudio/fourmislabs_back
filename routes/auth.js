@@ -141,7 +141,7 @@ router.post('/register', async (req, res) => {
     email: req.body.email,
     password: req.body.password,
     pseudo: req.body.pseudo,
-    is_verified: false,
+    is_verified: true,
     role: req.body.role,
     newsletter: req.body.newsletter,
     lastlogin: null,
